@@ -1,0 +1,50 @@
+unit eNota.Controller.Invoker;
+
+interface
+
+uses
+  eNota.Controller.NotaFiscal.Interfaces;
+
+type
+
+  TControllerInvoker = class(TInterfacedObject, iInvoker)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New: iInvoker;
+      function Add(Value: iCommand): iInvoker;
+      function Execute: iInvoker;
+  end;
+
+implementation
+
+{ TControllerNotaFiscal }
+
+function TControllerNotaFiscal.Add(Value: iCommand): iInvoker;
+begin
+
+end;
+
+constructor TControllerNotaFiscal.Create;
+begin
+
+end;
+
+destructor TControllerNotaFiscal.Destroy;
+begin
+
+  inherited;
+end;
+
+function TControllerNotaFiscal.Execute: iInvoker;
+begin
+
+end;
+
+class function TControllerNotaFiscal.New: iInvoker;
+begin
+  Result := Self.Create;
+end;
+
+end.

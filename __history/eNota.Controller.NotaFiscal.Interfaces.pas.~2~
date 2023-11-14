@@ -1,0 +1,14 @@
+unit eNota.Controller.NotaFiscal.Interfaces;
+
+interface
+
+type
+
+  iNotaFiscal = interface
+    ['{5D4D20FC-944C-4737-8B32-092AC0375F6B}']
+
+  end;
+
+implementation
+
+end.

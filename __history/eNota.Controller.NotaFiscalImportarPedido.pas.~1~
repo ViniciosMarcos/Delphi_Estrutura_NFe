@@ -1,0 +1,46 @@
+unit eNota.Controller.NotaFiscalImportarPedido;
+
+interface
+
+uses
+  eNota.Controller.NotaFiscal.Interfaces;
+
+type
+
+  TControllerNotaFiscalImportarPedido = class(TInterfacedObject, iCommand)
+    private
+      FParent: iNotaFiscal;
+    public
+      constructor Create(Parent: iNotaFiscal);
+      destructor Destroy; override;
+      class function New(Parent: iNotaFiscal) : iCommand;
+      function Execute: iCommand;
+  end;
+
+implementation
+
+{ TControllerNotaFiscalImportarPedido }
+
+constructor TControllerNotaFiscalImportarPedido.Create(Parent: iNotaFiscal);
+begin
+  FParent := Parent;
+end;
+
+destructor TControllerNotaFiscalImportarPedido.Destroy;
+begin
+
+  inherited;
+end;
+
+function TControllerNotaFiscalImportarPedido.Execute: iCommand;
+begin
+  Result := Self;
+  FParent.ImportarPedido();
+end;
+
+class function TControllerNotaFiscalImportarPedido.New(Parent: iNotaFiscal) : iCommand;
+begin
+  Result := Self.Create(Parent);
+end;
+
+end.
